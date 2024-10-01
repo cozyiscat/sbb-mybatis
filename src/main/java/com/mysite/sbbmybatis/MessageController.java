@@ -1,5 +1,7 @@
 package com.mysite.sbbmybatis;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,4 +33,10 @@ public class MessageController {
     public void createMessage(@RequestBody Message message) {
         messageService.createMessage(message);
     }
+    @GetMapping
+    @ResponseBody
+    public List<Message> getMessageLimit10(){
+    	return messageService.getMessageLimit10();
+    }
+
 }

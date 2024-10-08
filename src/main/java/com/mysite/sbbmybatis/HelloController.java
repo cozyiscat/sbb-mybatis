@@ -11,8 +11,4 @@ public class HelloController {
 		return "hello";
 	}
 	
-	@GetMapping ("/user/login")
-	public String login() {
-		return "/user/login";
-	}
 }

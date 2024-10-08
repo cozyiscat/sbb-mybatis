@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -14,10 +16,15 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	//유저정보
+	//로그인 페이지
 	@GetMapping("/user/login") 
 	public String login() {
 		return "/user/login";
+	}
+	
+	@PostMapping("/user/login")
+	public void login2(@RequestBody User user){
+		User newUser = user;
 	}
 	
 	//상세정보

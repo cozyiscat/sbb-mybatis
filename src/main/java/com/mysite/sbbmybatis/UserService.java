@@ -2,18 +2,23 @@ package com.mysite.sbbmybatis;
 
 import java.time.LocalDateTime;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
+	@Autowired
+	UserMapper userMapper;
+	
 	public User getUser(String username) {
-		User user1 = new User();
-		user1.setId(1);
-		user1.setUsername(username);
-		LocalDateTime now= LocalDateTime.now();
-		user1.setCreatedAt(now);
-		user1.setUpdatedAt(now);
+		return userMapper.getUserByUsername(username);
+//		User user1 = new User();
+//		user1.setId(1);
+//		user1.setUsername(username);
+//		LocalDateTime now= LocalDateTime.now();
+//		user1.setCreatedAt(now);
+//		user1.setUpdatedAt(now);
 		
-		return user1;
+//		return user1;
 	}
 }
